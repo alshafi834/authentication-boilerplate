@@ -5,12 +5,12 @@ import MainHeader from "./MainHeader";
 import { Link } from "react-router-dom";
 import Navlinks from "./Navlinks";
 
-const MainNavigation = props => {
+const MainNavigation = (props) => {
   return (
     <MainHeader>
-      <h1 className="main-navigation__title">
-        <Link to="/">Authentication Boilerplate</Link>
-      </h1>
+      <h2 className="main-navigation__title">
+        <Link to="/">Mern Boilerplate</Link>
+      </h2>
       <nav>
         <Navlinks />
       </nav>
