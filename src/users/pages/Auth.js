@@ -74,44 +74,62 @@ const Auth = () => {
   return (
     <Container maxWidth="sm">
       <div className="authContainer">
-        <button onClick={changeMode}>Switch mode</button>
+        <div className="formHeader">
+          <div>
+            <h2>{signUpMode ? "Sign Up" : "Login"}</h2>
+          </div>
+          <div>
+            <span>Switch to</span>
+            <button onClick={changeMode}>
+              {signUpMode ? "Login" : "Sign Up"}
+            </button>
+          </div>
+        </div>
         <form noValidate autoComplete="off" onSubmit={authSubmitHandler}>
           <Grid container spacing={3}>
             {signUpMode ? (
               <Grid item xs={12}>
                 <TextField
+                  fullWidth
                   id="uname"
                   label="User Name"
                   onChange={handleChange("uname")}
                   value={values.uname}
                   type="text"
                   variant="outlined"
+                  size="small"
                 />
               </Grid>
             ) : null}
             <Grid item xs={12}>
               <TextField
+                fullWidth
                 id="email"
                 label="Email"
                 onChange={handleChange("email")}
                 value={values.email}
                 type="Email"
                 variant="outlined"
+                size="small"
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
+                fullWidth
                 id="password"
                 label="Password"
                 onChange={handleChange("password")}
                 value={values.password}
                 type="password"
                 variant="outlined"
+                size="small"
               />
             </Grid>
-            <Button variant="outlined" color="primary" type="submit">
-              {signUpMode ? "Sign In" : "Login"}
-            </Button>
+            <Grid item xs={12}>
+              <Button variant="outlined" color="primary" type="submit">
+                {signUpMode ? "Sign In" : "Login"}
+              </Button>
+            </Grid>
           </Grid>
         </form>
       </div>
